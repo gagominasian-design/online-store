@@ -1,0 +1,116 @@
+.page {
+  min-height: 100vh;
+  background: #0f1115;
+  color: white;
+  padding: 40px;
+}
+
+.title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+/* EMPTY */
+.empty {
+  text-align: center;
+  margin-top: 80px;
+  color: #aaa;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* CARD */
+.card {
+  background: #1a1f2b;
+  border-radius: 14px;
+  padding: 15px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+/* IMAGE */
+.card img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  background: white;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+/* INFO */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.name {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.price {
+  color: #aaa;
+}
+
+/* QTY */
+.qty {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.qty button {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: #333;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.sum {
+  color: #00ff9d;
+  font-weight: bold;
+}
+
+/* REMOVE */
+.remove {
+  border: none;
+  background: #ff3b3b;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* SUMMARY */
+.summary {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.total {
+  font-size: 24px;
+  color: #00ff9d;
+  margin-bottom: 10px;
+}
+
+.checkout {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #ff9900;
+  cursor: pointer;
+  font-weight: bold;
+}

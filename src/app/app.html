@@ -1,0 +1,35 @@
+<div class="navbar">
+
+  <div class="logo">🛒 Online Store</div>
+
+  <div class="nav-links">
+
+    <a routerLink="/home" routerLinkActive="active">Home</a>
+
+    <a routerLink="/cart" routerLinkActive="active" class="cart-btn">
+      🛒 Cart <span>({{ cartService.getCount() }})</span>
+    </a>
+
+    <!-- 🔐 NOT AUTH -->
+    <ng-container *ngIf="!isAuth()">
+
+      <a routerLink="/login" class="auth-btn">Login</a>
+
+    </ng-container>
+
+    <!-- 👤 AUTH -->
+    <ng-container *ngIf="isAuth()">
+
+      <span class="user">👤 {{ getUserName() }}</span>
+
+      <button class="logout" (click)="logout()">
+        Logout
+      </button>
+
+    </ng-container>
+
+  </div>
+
+</div>
+
+<router-outlet></router-outlet>

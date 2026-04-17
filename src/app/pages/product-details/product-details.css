@@ -1,0 +1,176 @@
+/* 🌐 PAGE */
+.page {
+  padding: 30px;
+  background: #0f1115;
+  min-height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 🧾 MAIN CARD */
+.card {
+  display: flex;
+  gap: 30px;
+  background: #1a1f2b;
+  padding: 25px;
+  border-radius: 16px;
+  max-width: 1000px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* 🖼 IMAGE */
+.image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 12px;
+  object-fit: contain;
+  background: white;
+  padding: 10px;
+}
+
+/* ℹ INFO */
+.info {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.meta {
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.price {
+  font-size: 24px;
+  color: #00ff9d;
+  font-weight: bold;
+}
+
+.desc {
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+/* 🛒 BUTTON */
+.btn {
+  margin-top: 10px;
+  padding: 12px;
+  background: #ff9900;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: #ffb84d;
+  transform: scale(1.03);
+}
+
+
+/* ⭐ REVIEWS (COMPACT) */
+.reviews {
+  margin-top: 25px;
+  background: #1a1f2b;
+  padding: 15px;
+  border-radius: 14px;
+  max-width: 600px;   /* 💥 меньше блок */
+  width: 100%;
+}
+
+/* ADD REVIEW */
+.add-review {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+/* ⭐ STARS */
+.stars {
+  display: flex;
+  gap: 4px;
+}
+
+.stars span {
+  cursor: pointer;
+  font-size: 18px;   /* 💥 меньше звёзды */
+  opacity: 0.3;
+  transition: 0.2s;
+}
+
+.stars span:hover {
+  transform: scale(1.2);
+}
+
+.stars span.active {
+  opacity: 1;
+  color: gold;
+}
+
+/* TEXTAREA */
+textarea {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  resize: none;
+  height: 70px;
+  outline: none;
+  font-size: 13px;
+}
+
+/* BUTTON */
+.add-review button {
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  background: #ff9900;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+.add-review button:hover {
+  background: #ffb84d;
+  transform: scale(1.02);
+}
+
+/* REVIEW ITEM */
+.review {
+  background: #111520;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.review .rating {
+  color: gold;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.review .text {
+  margin-top: 4px;
+  font-size: 13px;
+  opacity: 0.85;
+}

@@ -1,0 +1,82 @@
+<div class="page" *ngIf="!loading && product">
+
+  <div class="card">
+
+    <!-- IMAGE -->
+    <div class="image">
+      <img [src]="product.thumbnail" />
+    </div>
+
+    <!-- INFO -->
+    <div class="info">
+
+      <h1 class="title">{{ product.title }}</h1>
+
+      <div class="meta">
+        <span class="rating">⭐ {{ product.rating }}</span>
+        <span class="brand">🏷 {{ product.brand }}</span>
+        <span class="stock">📦 {{ product.stock }} in stock</span>
+      </div>
+
+      <div class="price">{{ product.price }}$</div>
+
+      <p class="desc">
+        {{ product.description }}
+      </p>
+
+      <!-- 💥 КНОПКА -->
+      <button class="btn" (click)="addToCart()">
+        Add to cart
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- ⭐ REVIEWS -->
+  <div class="reviews">
+
+    <h2>⭐ Reviews</h2>
+
+    <!-- ДОБАВИТЬ ОТЗЫВ -->
+    <div class="add-review">
+
+      <div class="stars">
+        <span *ngFor="let star of [1,2,3,4,5]"
+              (click)="rating = star"
+              [class.active]="star <= rating">
+          ⭐
+        </span>
+      </div>
+
+      <textarea [(ngModel)]="reviewText"
+                placeholder="Write your review...">
+      </textarea>
+
+      <button (click)="submitReview()">
+        Submit
+      </button>
+
+    </div>
+
+    <!-- СПИСОК -->
+    <div class="review" *ngFor="let r of reviews">
+
+      <div class="rating">
+        ⭐ {{ r.rating }}
+      </div>
+
+      <div class="text">
+        {{ r.text }}
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- LOADING -->
+<div class="loading" *ngIf="loading">
+  Loading product...
+</div>

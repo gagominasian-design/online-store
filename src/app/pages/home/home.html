@@ -1,0 +1,74 @@
+
+
+<div class="container">
+
+  <!-- 🔍 SEARCH + FILTERS -->
+  <div class="header">
+
+    <input class="search"
+           [(ngModel)]="searchText"
+           (ngModelChange)="applyFilters()"
+           placeholder="Search..." />
+
+    <select [(ngModel)]="selectedCategory"
+            (change)="applyFilters()">
+      <option value="">All Categories</option>
+      <option *ngFor="let c of categories" [value]="c">
+        {{ c }}
+      </option>
+    </select>
+
+    <select [(ngModel)]="selectedBrand"
+            (change)="applyFilters()">
+      <option value="">All Brands</option>
+      <option *ngFor="let b of brands" [value]="b">
+        {{ b }}
+      </option>
+    </select>
+
+    <input type="number"
+           [(ngModel)]="minPrice"
+           (input)="applyFilters()"
+           placeholder="Min $" />
+
+    <input type="number"
+           [(ngModel)]="maxPrice"
+           (input)="applyFilters()"
+           placeholder="Max $" />
+
+    <select [(ngModel)]="minRating"
+            (change)="applyFilters()">
+      <option value="0">All ⭐</option>
+      <option value="1">⭐ 1+</option>
+      <option value="2">⭐ 2+</option>
+      <option value="3">⭐ 3+</option>
+      <option value="4">⭐ 4+</option>
+    </select>
+
+  </div>
+
+  <!-- 🛍 PRODUCTS -->
+  <div class="grid">
+
+    <div *ngFor="let p of filteredProducts"
+         class="card"
+         (click)="goToProduct(p.id)">
+
+      <img [src]="p.thumbnail" class="img" />
+
+      <div class="title">{{ p.title }}</div>
+
+      <div class="price">{{ p.price }}$</div>
+
+      <div class="rating">⭐ {{ p.rating }}</div>
+
+      <button class="btn"
+              (click)="addToCart(p); $event.stopPropagation()">
+        Add to cart
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

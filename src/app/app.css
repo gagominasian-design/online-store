@@ -1,0 +1,190 @@
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #0f1115;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  width: 100%;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 25px;
+
+  background: #161a22;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* LOGO */
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+/* NAV LINKS */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* BASE LINKS */
+.nav-links a {
+  text-decoration: none;
+  color: #cfd3dc;
+
+  padding: 8px 12px;
+  border-radius: 8px;
+
+  font-size: 14px;
+
+  transition: 0.2s ease;
+}
+
+/* HOVER */
+.nav-links a:hover {
+  background: rgba(255,255,255,0.08);
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* ACTIVE */
+.nav-links a.active {
+  background: #ff1e1e;
+  color: white;
+  font-weight: 600;
+}
+
+/* CART */
+.cart-btn span {
+  opacity: 0.8;
+}
+
+/* ================= AUTH ================= */
+
+.auth-btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+
+  text-decoration: none;
+  color: #cfd3dc;
+
+  font-size: 14px;
+
+  transition: 0.2s;
+}
+
+.auth-btn:hover {
+  background: rgba(255,255,255,0.08);
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* REGISTER */
+.auth-btn.register {
+  background: #ff9900;
+  color: black;
+  font-weight: bold;
+}
+
+.auth-btn.register:hover {
+  background: #ffb84d;
+}
+
+/* ================= USER ================= */
+
+.user {
+  color: #cfd3dc;
+  font-size: 14px;
+  padding: 8px 10px;
+  opacity: 0.9;
+}
+
+/* LOGOUT */
+.logout {
+  padding: 8px 12px;
+  border-radius: 8px;
+
+  border: none;
+  cursor: pointer;
+
+  background: #ff3b3b;
+  color: white;
+
+  font-size: 14px;
+
+  transition: 0.2s;
+}
+
+.logout:hover {
+  background: #ff5c5c;
+  transform: translateY(-1px);
+}
+
+/* TABLET */
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 0 15px;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  .nav-links {
+    gap: 6px;
+  }
+
+  .nav-links a,
+  .auth-btn,
+  .logout {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .user {
+    font-size: 12px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+
+  .navbar {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .logo {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}

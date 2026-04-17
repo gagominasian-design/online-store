@@ -1,0 +1,66 @@
+<div class="page">
+
+  <h1 class="title">🛒 Shopping Cart</h1>
+
+  <div class="empty" *ngIf="cartService.getCart().length === 0">
+    Your cart is empty 😢
+  </div>
+
+  <div class="grid" *ngIf="cartService.getCart().length > 0">
+
+    <div class="card" *ngFor="let item of cartService.getCart()">
+
+      <!-- IMAGE -->
+      <img [src]="item.thumbnail" />
+
+      <!-- INFO -->
+      <div class="info">
+
+        <div class="name">
+          {{ item.name || item.title }}
+        </div>
+
+        <div class="price">
+          {{ item.price }}$
+        </div>
+
+        <!-- QTY -->
+        <div class="qty">
+
+          <button (click)="cartService.decrease(item)">−</button>
+
+          <span>{{ item.quantity }}</span>
+
+          <button (click)="cartService.increase(item)">+</button>
+
+        </div>
+
+        <!-- TOTAL -->
+        <div class="sum">
+          Total: {{ item.price * item.quantity }}$
+        </div>
+
+        <button class="remove" (click)="cartService.removeFromCart(item)">
+          Remove
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- TOTAL -->
+  <div class="summary" *ngIf="cartService.getCart().length > 0">
+
+    <div class="total">
+      Total: {{ cartService.getTotal() }}$
+    </div>
+
+    <button class="checkout">
+      Checkout
+    </button>
+
+  </div>
+
+</div>
